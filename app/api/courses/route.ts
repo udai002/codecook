@@ -3,11 +3,16 @@ import Course from "@/models/courses";
 import { NextResponse } from "next/server";
 
 
-
-export async function GET(){
+export async function GET(request:Request){
     await connectDb();
-     const data =await Course.find({})
-    return NextResponse.json({msg:"it is workign",data})
+    const {searchParams}=new URL(request.url)
+    const type=searchParams.get("type")
+    const query:any={}
+    if(type){
+        query.category=type
+    }    
+     const data =await Course.find(query)
+    return NextResponse.json({msg:"course information",data})
 }
 
 export async function POST(request:Request){

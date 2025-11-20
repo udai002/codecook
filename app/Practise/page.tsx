@@ -1,4 +1,6 @@
+'use client'
 import Problem from "@/components/practise/Problem";
+import { useEffect } from "react";
 
 function Practice(){
 
@@ -7,6 +9,9 @@ function Practice(){
         .then(res=>res.json())
         .then(data=>console.log(data))
     }
+    useEffect(()=>{
+        getCourses()
+    },[])
     return <div>
         <Problem/>
     </div>
