@@ -4,14 +4,16 @@ const button = cva(["font-semibold rounded-md"] , {
     variants:{
         intent:{
             primary:"bg-blue-700 text-white "  , 
-            secondary:"border-2 text-blue-700 border-blue-700 "
+            secondary:"border-2 text-blue-700 border-blue-700 " , 
+            disabled:"bg-blue-700/45 text-white"
         } , 
         size:{
-            large:"px-4 py-2 text-xl" , 
+            large:"px-4 py-3 text-xl" , 
             small:"px-4 py-1"
         } , 
         disabled:{
             false:null , 
+
         }
     }
 })
@@ -20,12 +22,16 @@ type ButtonProps = {
     intent: "primary" | "secondary" , 
     size:"large" | "small" , 
     title:string , 
-    onClick?:()=>void
+    onClick?:()=>void , 
+    loading?:boolean , 
+    disable?:boolean ,
+    loadingText?:string
 }
 
-function Button({intent, size , title , onClick}:ButtonProps){
-    return <button className={button({intent:intent , size:size})} onClick={onClick}>
-        {title}
+function Button({intent, size , title , onClick , loading , disable , loadingText}:ButtonProps){
+    return <button className={button({intent:disable||loading ? "disabled":intent , size:size})} onClick={onClick}>
+        {loading?<div className="flex items-center gap-3 justify-center">
+            <div className="animate-spin border-b-2 border-l-2 rounded-full w-5 h-5 border-white "></div><span>{loadingText ?? 'loading...'}</span></div>:title}
     </button>
 }
 
