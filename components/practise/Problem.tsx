@@ -6,58 +6,58 @@ const cards = [
     tag: "NEW",
     description: "Turn coding practice into an epic adventure",
     buttonLabel: "Begin Now",
-    href: "/quest",
     gradient: "from-slate-100 to-slate-200",
+    filterKey: "Programming",
   },
   {
     title: "Project-Based Learning",
     subtitle: "30 Days Challenge",
     badge: "Beginner Friendly",
     buttonLabel: "Start Learning",
-    href: "/javascript-30-days",
     gradient: "from-orange-400 to-orange-500",
+    filterKey: "Projects",
   },
   {
     title: "Beginner DSA",
     buttonLabel: "Get Started",
-    href: "/interview-questions",
     gradient: "from-sky-500 to-blue-600",
+    filterKey: "Beginner DSA",
   },
   {
     title: "Algorithms",
     buttonLabel: "Get Started",
-    href: "/interview-questions",
     gradient: "from-sky-500 to-blue-600",
+    filterKey: "Algorithms",
   },
   {
     title: "Difficulty rating wise",
     buttonLabel: "Get Started",
-    href: "/interview-questions",
     gradient: "from-sky-500 to-blue-600",
+    filterKey: "Difficulty",
   },
   {
     title: "Interview Questions",
     subtitle: "30 Days Challenge",
     badge: "Beginner Friendly",
     buttonLabel: "Start Learning",
-    href: "/javascript-30-days",
     gradient: "from-orange-400 to-orange-500",
+    filterKey: "Interview",
   },
   {
     title: "Company-wise Questions",
     subtitle: "30 Days Challenge",
     badge: "Beginner Friendly",
     buttonLabel: "Start Learning",
-    href: "/javascript-30-days",
     gradient: "from-orange-400 to-orange-500",
+    filterKey: "company-wise",
   },
   {
     title: "Advanced Coding Problems",
     subtitle: "30 Days Challenge",
     badge: "Beginner Friendly",
     buttonLabel: "Start Learning",
-    href: "/javascript-30-days",
     gradient: "from-orange-400 to-orange-500",
+    filterKey: "advanced",
   },
 ];
 
@@ -122,7 +122,10 @@ export default function HomeBanners() {
 
           <div className="mt-4">
             <Link
-              href={card.href}
+              href={{
+                pathname:"/api/courses",
+                query:{type:card.filterKey}
+              }}
               className="
                 inline-flex items-center justify-center
                 rounded-full px-4 py-2
