@@ -123,7 +123,7 @@ export default function HomeBanners() {
           <div className="mt-4">
             <Link
               href={{
-                pathname:"/api/courses",
+                pathname:"/coursespage",
                 query:{type:card.filterKey}
               }}
               className="
