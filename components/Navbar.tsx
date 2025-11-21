@@ -30,7 +30,7 @@ function Header() {
               Home
             </button>
             <button
-              onClick={()=>router.push("/Practise")}
+              onClick={()=>router.push("/problem")}
               className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all hover:bg-blue-500/10`}
             >
               <Trophy className="w-4 h-4" />
@@ -44,11 +44,18 @@ function Header() {
               Blogs
             </button>
             <button
-             
+              onClick={()=>router.push("/coursespage")}
               className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all hover:bg-blue-500/10`}
             >
               <BookOpen className="w-4 h-4" />
               Courses
+            </button>
+            <button
+              onClick={()=>router.push("/compiler")}
+              className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all hover:bg-blue-500/10`}
+            >
+              <BookOpen className="w-4 h-4" />
+              Compiler
             </button>
           </nav>
           </div>
