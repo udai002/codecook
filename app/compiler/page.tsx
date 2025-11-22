@@ -185,25 +185,13 @@ async function ComProblem(props: CoursesPageProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
-                  <Code2 className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h1 className="text-xl font-black text-slate-900">Problem Solver</h1>
-                  <p className="text-xs text-slate-600 font-medium">Code, Test, Succeed</p>
-                </div>
+              
               </div>
             </div>
             
             <div className="flex items-center gap-3">
-              <button className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-all duration-300 flex items-center gap-2">
-                <FileText className="w-4 h-4" />
-                Solutions
-              </button>
-              <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg">
-                <CheckCircle2 className="w-4 h-4" />
-                Submit
-              </button>
+           
+              
             </div>
           </div>
         </div>
@@ -211,13 +199,15 @@ async function ComProblem(props: CoursesPageProps) {
 
       <div className="flex gap-6 p-6 h-[calc(100vh-100px)]">
         {/* LEFT: Problem Details */}
-        <div className="w-1/2 bg-white rounded-3xl shadow-xl border-2 border-slate-100 overflow-hidden flex flex-col">
+        <div className="w-1/2 bg-white  border-2 border-slate-100 overflow-hidden flex flex-col">
           {/* Problem Header */}
-          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 px-8 py-6 relative overflow-hidden">
+          <div className="bg-blue-600 px-8 py-6 relative">
+
+
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-24 -translate-x-24"></div>
+              {/* <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-24 -translate-x-24"></div> */}
             </div>
             
             <div className="relative">
@@ -225,10 +215,10 @@ async function ComProblem(props: CoursesPageProps) {
                 <h1 className="text-3xl font-black text-white leading-tight flex-1 pr-4">
                   {problem.title}
                 </h1>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30">
+                {/* <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30">
                   <Sparkles className="w-4 h-4 text-yellow-300 fill-yellow-300" />
                   <span className="text-sm font-bold text-white">Premium</span>
-                </div>
+                </div> */}
               </div>
               
               <div className="flex items-center gap-3">
@@ -247,11 +237,10 @@ async function ComProblem(props: CoursesPageProps) {
             {/* Description Section */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                  <FileText className="w-4 h-4 text-white" />
+           
                 </div>
                 <h2 className="text-lg font-black text-slate-900">Description</h2>
-              </div>
+             
               <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap bg-slate-50 p-5 rounded-2xl border border-slate-200">
                 {problem.description}
               </p>
@@ -260,11 +249,10 @@ async function ComProblem(props: CoursesPageProps) {
             {/* Input Format Section */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-white" />
+              
                 </div>
                 <h2 className="text-lg font-black text-slate-900">Input Format</h2>
-              </div>
+           
               <pre className="text-sm whitespace-pre-wrap bg-gradient-to-br from-purple-50 to-blue-50 p-5 rounded-2xl border-2 border-purple-200 text-slate-800 font-mono">
 {problem.inputFormat}
               </pre>
@@ -273,11 +261,10 @@ async function ComProblem(props: CoursesPageProps) {
             {/* Output Format Section */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-white" />
+             
                 </div>
                 <h2 className="text-lg font-black text-slate-900">Output Format</h2>
-              </div>
+           
               <pre className="text-sm whitespace-pre-wrap bg-gradient-to-br from-emerald-50 to-teal-50 p-5 rounded-2xl border-2 border-emerald-200 text-slate-800 font-mono">
 {problem.outputFormat}
               </pre>
@@ -286,11 +273,10 @@ async function ComProblem(props: CoursesPageProps) {
             {/* Test Cases Section */}
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                  <Award className="w-4 h-4 text-white" />
+              
                 </div>
                 <h2 className="text-lg font-black text-slate-900">Sample Test Cases</h2>
-              </div>
+        
               
               <div className="space-y-5">
                 {problem.testCases
@@ -301,7 +287,7 @@ async function ComProblem(props: CoursesPageProps) {
                       className="border-2 border-slate-200 rounded-2xl p-6 bg-gradient-to-br from-white to-slate-50 shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br   flex items-center justify-center">
                           <span className="text-sm font-bold text-white">{idx + 1}</span>
                         </div>
                         <p className="font-black text-slate-900">Example {idx + 1}</p>
@@ -347,10 +333,7 @@ async function ComProblem(props: CoursesPageProps) {
               <span className="ml-3 text-sm font-bold text-slate-300">Code Editor</span>
             </div>
             
-            <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-sm transition-all duration-300 flex items-center gap-2 shadow-lg">
-              <Play className="w-4 h-4" />
-              Run Code
-            </button>
+           
           </div>
           
           {/* Code Editor Component */}

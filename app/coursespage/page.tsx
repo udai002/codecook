@@ -407,12 +407,7 @@ export default async function CoursesPage(props: CoursesPageProps) {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 px-4 py-12">
       <div className="max-w-7xl mx-auto">
         {/* Hero Header */}
-        <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-bold mb-6 shadow-lg animate-pulse">
-            <Sparkles className="w-4 h-4" />
-            <span>Premium Learning Experience</span>
-          </div>
-          
+        <div className="mb-12 text-center">  
           <h1 className="text-5xl md:text-7xl font-black mb-5 text-slate-900">
             {type ? `${type} Courses` : "Explore Our Courses"}
           </h1>
