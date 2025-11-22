@@ -487,14 +487,14 @@ export default async function CoursesPage(props: CoursesPageProps) {
                 className="group bg-white rounded-3xl shadow-xl border-2 border-slate-100 overflow-hidden hover:shadow-2xl hover:-translate-y-3 hover:border-blue-200 transition-all duration-500"
               >
                 {/* Card Header with Dynamic Gradient */}
-                <div className={`h-44 bg-gradient-to-br ${gradient} relative overflow-hidden`}>
+                <div className={` relative overflow-hidden`}>
                   {/* Animated background pattern */}
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-20 -translate-y-20"></div>
                     <div className="absolute bottom-0 right-0 w-32 h-32 bg-white rounded-full translate-x-16 translate-y-16"></div>
                   </div>
                   
-                  <div className="absolute top-5 right-5">
+                  {/* <div className="absolute top-5 right-5">
                     {course.isFree ? (
                       <span className="px-4 py-2 rounded-full bg-emerald-500 text-white text-sm font-bold shadow-xl flex items-center gap-1.5">
                         <Star className="w-4 h-4 fill-white" />
@@ -505,7 +505,7 @@ export default async function CoursesPage(props: CoursesPageProps) {
                         ₹{course.price}
                       </span>
                     )}
-                  </div>
+                  </div> */}
                   
                   <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                     {course.level && (
@@ -569,7 +569,7 @@ export default async function CoursesPage(props: CoursesPageProps) {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105">
+                  <button className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-600 text-white font-bold text-sm hover:from-blue-700 hover:to-blue-700 duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105">
                     View Course Details →
                   </button>
                 </div>
