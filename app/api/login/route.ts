@@ -23,7 +23,7 @@ export const POST = asyncHandler(async (request: Request) => {
     const verifyPassword = await bcrypt.compare(password , findUser.password)
     if(verifyPassword){
         if(!process.env.JWT_TOKEN) throw new ApiError(401 , false , "Secrete key not found")
-        const token = await jwt.sign({username:findUser.userName , email:findUser.email , userId:findUser._id} ,  process.env.JWT_TOKEN )
+        const token = await jwt.sign({username:findUser.userName , email:findUser.email , userId:findUser._id , company:findUser.company} ,  process.env.JWT_TOKEN )
         console.log("the token is generated"  , token)
         const cookieStore = await cookies()
         cookieStore.set("token" , token)

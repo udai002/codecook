@@ -3,6 +3,9 @@
 import { Code2, Trophy, BookOpen, User, Search, Bell } from 'lucide-react';
 import Button from './UI/Button';
 import { useRouter } from 'next/navigation';
+import { useAppData } from '@/context/AuthContext';
+import { useState } from 'react';
+import { IoIosLogOut } from "react-icons/io";
 
 interface HeaderProps {
   currentPage: 'home' | 'problems' | 'blogs' | 'profile';
@@ -12,6 +15,9 @@ interface HeaderProps {
 function Header() {
 
     const router = useRouter()
+    const {isAuth , logout} = useAppData()
+    const [hoverProfile , setHoverProfile] = useState(false)
+    
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/55 border-b border-blue-500/20 px-10">
       <div className="max-w-7xl mx-auto ">
@@ -69,18 +75,26 @@ function Header() {
             {/* <button className="p-2 text-slate-400 hover:text-blue-300 hover:bg-blue-500/10 rounded-lg transition-all relative">
               <Bell className="w-5 h-5" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
-            </button>
-            <button
-                className='text-slate-400 flex items-center gap-1'
-            >
-              <User className="w-5 h-5 " />
-              
             </button> */}
+            {isAuth?<button 
+            onMouseEnter={()=>setHoverProfile(true)}
+            onMouseLeave={()=>setHoverProfile(false)}
+                className='text-black flex items-center gap-1'
+            >
+              <User className="w-6 h-6 "  />
+               {hoverProfile&&<div className='absolute transition-all ease-in-out '>
+                <ul className='relative top-12 bg-white right-4 rounded-md border-2 border-black/45'>
+                  <li className='px-4 py-1 hover:bg-blue-500/10 transition-all ease-in'><button onClick={()=>router.push("/profile")}>Profile</button></li>
+                  <li className='px-4 py-1 hover:bg-blue-500/10 transition-all ease-in flex gap-1 items-center'> <button onClick={()=>logout()}>logout</button></li>
+                </ul>
+              </div>}
+              
+            </button>:
 
             <div className='flex gap-3'>
                 <Button intent='secondary' size='small' title='Login' onClick={()=>router.push("/login")}/>
                 {/* <Button intent='primary' size='small' title='signup'/> */}
-            </div>
+            </div>}
            
           </div>
         </div>
