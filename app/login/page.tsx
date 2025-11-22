@@ -31,7 +31,7 @@ function LoginForm({setMode , mode}:LoginFormProps) {
   })
   const [loading , setLoading] = useState(false)
 
-  const {loginUser} = useAppData()
+  const {loginUser , fetchUser} = useAppData()
 
  function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;

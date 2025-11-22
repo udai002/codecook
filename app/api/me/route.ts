@@ -13,3 +13,9 @@ export const GET = asyncHandler(async (request:Request)=>{
     return new ApiResponse(true , "fetcing the token" , userDetails)
 
 })
+
+export const DELETE = asyncHandler(async()=>{
+    const cookieStore = await cookies()
+    const session_token = cookieStore.delete("token")
+    return new ApiResponse(true, "Loggoed out" )
+})

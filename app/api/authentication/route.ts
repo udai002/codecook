@@ -3,7 +3,6 @@ import ApiResponse from "@/lib/ApiResponse";
 import { asyncHandler } from "@/lib/AsyncHandler";
 import connectDb from "@/lib/mongodb";
 import Users from "@/models/users";
-import { NextResponse } from "next/server";
 import bcrypt from 'bcrypt'
 
 export const POST = asyncHandler(async (request: Request) => {
